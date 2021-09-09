@@ -118,23 +118,59 @@ public class Main
         temp1 = SentenceTransformer.lastWords(temp1); //"Fred"
         temp2 = WordTransformer.rightPadder(temp2,"!"); //"dude!"
 
-        //Janet
+        //Janet said Fred
         String temp3 = inString2;
         temp3 = SentenceTransformer.depunctuate(temp3);
-        temp3 = SentenceTransformer.reverseSentence(temp3);
-        temp3 = SentenceTransformer.firstWord(temp3); //"Janet"
+        for (int i = 0; i < 4; i++)
+            temp3 = SentenceTransformer.lastWords(temp3); //"Janet"
 
-        System.out.println(temp1);
-        System.out.println(temp2);
-        System.out.println(temp3);
+        String temp4 = inString1;
+        temp4 = SentenceTransformer.depunctuate(temp4);
+        String temp5 = SentenceTransformer.lastWords(temp4);//"said...."
+        temp5 = SentenceTransformer.firstWord(temp5); //"said"
+        temp3 = WordTransformer.rightPadder(temp3, WordTransformer.leftPadder(temp5)); //"Janet said"
+        temp3 = WordTransformer.rightPadder(temp3, WordTransformer.leftPadder(temp1)); //"Janet said Fred"
+
+        //is one kool dude!
+        for (int i = 0; i < 3; i++)
+            temp4 = SentenceTransformer.lastWords(temp4); //"is my turn to look for one"
+
+        String temp6 = SentenceTransformer.firstWord(temp4); //"is"
+        String temp7 = temp4;
+        for (int i = 0; i < 4; i++)
+            temp7 = SentenceTransformer.lastWords(temp7); //"look for one"
+
+        String temp8 = SentenceTransformer.firstWord(temp7); //"look"
+        temp8 = WordTransformer.reverseWord(temp8); //"kool"
+        for (int i = 0; i < 2; i++)
+            temp7 = SentenceTransformer.lastWords(temp7);
+
+        temp6 = WordTransformer.rightPadder(temp6, WordTransformer.rightPadder(WordTransformer.leftPadder(temp7), WordTransformer.leftPadder(temp8)));
+        temp6 = WordTransformer.rightPadder(temp6, WordTransformer.leftPadder(temp2));
+
+        //Janet said Fred is one kool dude!
+        temp3 = WordTransformer.rightPadder(temp3, WordTransformer.leftPadder(temp6));
+
+//        System.out.println(temp1);
+//        System.out.println(temp2);
+//        System.out.println(temp3);
+//        System.out.println(temp4);
+//        System.out.println(temp5);
+//        System.out.println(temp6);
+//        System.out.println(temp7);
+//        System.out.println(temp8);
+
+        String finalSentence = temp3;
+        System.out.print(finalSentence);
 
         //note to josh, i left off with trying to reverse inString2 but stopped because of the incomplete method
+
     }
 
     public static void main(String[] args)
     {
         //Example();
-        //Exercise1();
+        Exercise1();
         Exercise2();
     }
 }
