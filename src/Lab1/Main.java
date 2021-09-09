@@ -103,9 +103,38 @@ public class Main
         System.out.println(temp2);
     }
 
+    public static void Exercise2() //"Janet said Fred is one kool dude!"
+    {
+        String inString0 = "Let's ask that dude Fred.";
+        String inString1 = "Who said it is my turn to look for one?";
+        String inString2 = "Take the computer from Janet!";
+
+        String temp1 = inString0;
+        temp1 = SentenceTransformer.depunctuate(temp1);
+        for (int i = 0; i < 3; i++)
+            temp1 = SentenceTransformer.lastWords(temp1);
+
+        String temp2 = SentenceTransformer.firstWord(temp1);
+        temp1 = SentenceTransformer.lastWords(temp1); //"Fred"
+        temp2 = WordTransformer.rightPadder(temp2,"!"); //"dude!"
+
+        //Janet
+        String temp3 = inString2;
+        temp3 = SentenceTransformer.depunctuate(temp3);
+        temp3 = SentenceTransformer.reverseSentence(temp3);
+        temp3 = SentenceTransformer.firstWord(temp3); //"Janet"
+
+        System.out.println(temp1);
+        System.out.println(temp2);
+        System.out.println(temp3);
+
+        //note to josh, i left off with trying to reverse inString2 but stopped because of the incomplete method
+    }
+
     public static void main(String[] args)
     {
         //Example();
-        Exercise1();
+        //Exercise1();
+        Exercise2();
     }
 }

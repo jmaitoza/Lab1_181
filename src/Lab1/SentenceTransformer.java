@@ -21,7 +21,8 @@ public class SentenceTransformer {
 		}
 	}
 
-	static String reverseSentence(String thePhrase){
+	static String reverseSentence(String thePhrase)
+	{
 		return null;
 	}
 	
