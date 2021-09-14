@@ -50,6 +50,7 @@ public class Main
 
     public static void Exercise1() //Poor Gilligan says hello there!
     {
+        System.out.println("Exercise 1: \n");
         String inString0 = "Gilligan";
         String inString1 = "Hello everyone!";
         String inString2 = "My mother says the weather is poor there.";
@@ -57,26 +58,19 @@ public class Main
 
         String temp1 = inString2;
         temp1 = SentenceTransformer.depunctuate(temp1);
-//        String temp2 = inString2;
-//        temp2 = SentenceTransformer.depunctuate(temp2);
-
         for (int i = 0; i < 6; i++)
             temp1 = SentenceTransformer.lastWords(temp1); // "poor there"
 
-
-        //System.out.println(temp1);
 
         String temp2;
         temp2 = SentenceTransformer.firstWord(temp1); // "poor"
         temp2 = WordTransformer.makeCapital(temp2); // "Poor"
 
-        //System.out.println(temp2);
 
         // Poor Gillian
         String temp3 = inString0;
         temp2 = WordTransformer.rightPadder(temp2, WordTransformer.leftPadder(temp3)); //"Poor Gilligan
 
-        //System.out.println(temp2);
 
         //Poor Gilligan says
         String temp4 = temp1;
@@ -89,22 +83,29 @@ public class Main
 
         temp5 = SentenceTransformer.firstWord(temp5);
 
-        temp2= WordTransformer.rightPadder(temp2, WordTransformer.leftPadder(temp5)); //"Poor Gilligan say"
-        //System.out.println(temp2);
+        temp2= WordTransformer.rightPadder(temp2, WordTransformer.leftPadder(temp5)); //"Poor Gilligan says"
 
         //Poor Gilligan says hello there!
         String temp6 = inString1;
         temp6 = SentenceTransformer.firstWord(temp6); //"Hello"
         temp6 = WordTransformer.lowerCase(temp6); //"hello"
         temp6 = WordTransformer.rightPadder(temp6, WordTransformer.leftPadder(temp4)); //"hello there!"
-
         temp2 = WordTransformer.rightPadder(temp2, WordTransformer.leftPadder(temp6)); //"Poor Gilligan says hello there!"
 
-        System.out.println(temp2);
+        System.out.println("Temp1: " + temp1);
+        System.out.println("Temp2: " + temp2);
+        System.out.println("Temp3: " + temp3);
+        System.out.println("Temp4: " + temp4);
+        System.out.println("Temp5: " + temp5);
+        System.out.println("Temp6: " + temp6);
+
+        String finalSentence = temp2;
+        System.out.println(finalSentence + "\n");
     }
 
     public static void Exercise2() //"Janet said Fred is one kool dude!"
     {
+        System.out.println("Exercise 2: \n");
         String inString0 = "Let's ask that dude Fred.";
         String inString1 = "Who said it is my turn to look for one?";
         String inString2 = "Take the computer from Janet!";
@@ -151,20 +152,17 @@ public class Main
         //Janet said Fred is one kool dude!
         temp3 = WordTransformer.rightPadder(temp3, WordTransformer.leftPadder(temp6));
 
-//        System.out.println(temp1);
-//        System.out.println(temp2);
-//        System.out.println(temp3);
-//        System.out.println(temp4);
-//        System.out.println(temp5);
-//        System.out.println(temp6);
-//        System.out.println(temp7);
-//        System.out.println(temp8);
+        System.out.println("Temp1: " + temp1);
+        System.out.println("Temp2: " + temp2);
+        System.out.println("Temp3: " + temp3);
+        System.out.println("Temp4: " + temp4);
+        System.out.println("Temp5: " + temp5);
+        System.out.println("Temp6: " + temp6);
+        System.out.println("Temp7: " + temp7);
+        System.out.println("Temp8: " + temp8);
 
         String finalSentence = temp3;
-        System.out.print(finalSentence);
-
-        //note to josh, i left off with trying to reverse inString2 but stopped because of the incomplete method
-
+        System.out.println(finalSentence);
     }
 
     public static void main(String[] args)
